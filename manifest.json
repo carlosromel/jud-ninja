@@ -1,0 +1,37 @@
+{
+   // Required
+   "name": "JudNinja",
+   "manifest_version": 2,
+   "version": "0.1",
+
+   // Recommended
+   "description": "Auxiliar no preenchimento de campos de formulários web.",
+   "icons": {"16": "icon.png", "32": "icon.png", "48": "icon.png", "128": "icon.png"},
+
+   // Page action
+   "browser_action": {
+     "default_popup": "popup.html",
+     "default_icon": "icon.png"
+   },
+
+   // Background
+   "background": {
+     "scripts": ["background.js"],
+     "persistent": false
+   },
+
+   // Content scripts
+   "content_scripts": [
+     {
+       "js": ["content.js"],
+       "matches": ["<all_urls>"]
+     }
+   ],
+
+   // Options
+   "options_page": "options.html",
+
+   // Permissions
+   "permissions": ["https://*.google.com/", "activeTab", "storage", "declarativeContent"]
+
+ }
